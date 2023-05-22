@@ -23,6 +23,7 @@ import SellOrder from '../pages/user/components/transform/sellorder' // 平仓�
 import IndexSellOrder from '../pages/user/components/transform/indexsellorder' // 平仓单 指数
 import FuturesSellOrder from '../pages/user/components/transform/futuressellorder' // 平仓单 指数
 import Bank from '../pages/user/components/save/bank' // 银行卡
+import Esop from '../pages/user/components/save/esop' // espp
 import Auth from '../pages/user/components/save/auth' // 实名认证
 import ChangePwd from '../pages/user/components/save/changepwd' // 修改银行卡
 import Login from '../pages/login/login' // 登录
@@ -31,7 +32,7 @@ import Forget from '../pages/login/forget' // 忘记密码
 import Message from '../pages/user/components/table/message' // 站内消息
 import Xingu from '../pages/user/components/table/xingu' // 新股申购
 
-//============================分仓配资-相关，2020年7月25日19:14:55=========================================
+// ============================分仓配资-相关，2020年7月25日19:14:55=========================================
 import Funds from '../pages/funds/index' // 分仓配资
 import Days from '../pages/funds/components/days' // 按天配资
 import Applyfund from '../pages/funds/components/table/applyfund' // 我的配资
@@ -40,11 +41,8 @@ import FundsSellOrder from '../pages/user/components/transform/fundssellorder' /
 import Funding from '../pages/funds/components/funding' // 配资详情
 import Contract from '../pages/funds/components/contract' // 合同
 
-
 import Enterprise from '../pages/enterprise/index' // 企业公告
 import enterpriseDetails from '../pages/enterprise/enterprise-details' // 企业公告详情
-
-
 
 // import HoldPositions from '@/pages/holdPositions/index'
 // import CapitalDetail from '@/pages/capitalDetail/index'
@@ -119,7 +117,7 @@ export default new Router({
       name: 'xingu',
       meta: { title: '新股申购' },
       component: Xingu
-    },{
+    }, {
       path: '/cashdetail',
       name: 'cashdetail',
       meta: { title: '资金记录' },
@@ -195,6 +193,11 @@ export default new Router({
       meta: { title: '实名认证' },
       component: Auth
     }, {
+      path: '/esop',
+      name: 'esop',
+      meta: { title: 'Esop' },
+      component: Esop
+    }, {
       path: '/changepwd',
       name: 'changepwd',
       meta: { title: '修改密码' },
@@ -217,7 +220,7 @@ export default new Router({
       meta: { title: '忘记密码' },
       component: Forget
     },
-    //============================分仓配资-相关，2020年7月25日19:14:55=========================================
+    // ============================分仓配资-相关，2020年7月25日19:14:55=========================================
     {
       path: '/funds',
       name: 'funds',
@@ -257,7 +260,6 @@ export default new Router({
       component: Contract
     },
 
-
     {
       path: '/enterprise',
       name: 'enterprise',
@@ -270,6 +272,6 @@ export default new Router({
       meta: { title: '企业公告详情' },
       component: enterpriseDetails
     }
-    
+
   ]
 })

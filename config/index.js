@@ -11,12 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/': {
-        target: 'http://127.0.0.1:8085',
+      '/apis': {
+        // target: 'http://127.0.0.1:8085',
+        target: 'http://43.224.34.138:99',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/': ''
+          '^/apis': ''
         }
       },
 	  // '/': {
@@ -31,7 +32,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: '0.0.0.0', // can be overwritten by process.env.HOST
-    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 5651, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

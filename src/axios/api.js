@@ -16,18 +16,15 @@ export function xingusgs (options) {
   return post('/new/public/index.php/api/Lists/add', options)
 }
 
-//新股冻结资金
+// 新股冻结资金
 export function getprice (options) {
   return get('/new/public/index.php/api/Lists/getprice', options)
 }
-
 
 // 申购提交列表
 export function xingusgsList (options) {
   return get('/new/public/index.php/api/Lists/index', options)
 }
-
-
 
 // 注册
 export function register (options) {
@@ -294,7 +291,7 @@ export function getjuhe1 (options) {
   return post('/user/pay/juhe1.do', options)
 }
 
-//H5支付
+// H5支付
 export function getjuheH5 (options) {
   return post('/user/pay/juheh5.do', options)
 }
@@ -376,8 +373,7 @@ export function getUnreadCount (options) {
   return post('/user/cash/getUnreadCount.do', options)
 }
 
-
-//============================分仓配资-相关，2020年7月23日19:14:55=========================================
+// ============================分仓配资-相关，2020年7月23日19:14:55=========================================
 // 分仓配资设置信息查询
 export function getFundsSetting (options) {
   return post('/user/funds/getFundsSetting.do', options)
@@ -438,10 +434,6 @@ export function getAppendList (options) {
   return post('/user/funds/getAppendList.do', options)
 }
 
-
-
-
-
 // 交易大厅-中间部分-新闻资讯
 export function getTransactionNewList (options) {
   return get('/api/news/getTopNews.do', options)
@@ -455,7 +447,6 @@ export function getTransactionNoticeList (options) {
 export function getDealHistory(options) {
   return get('/api/news/getPositionTop.do', options)
 }
-
 
 // 资讯列表（交易大厅左侧小列表）
 export function getNewsList(options) {
@@ -471,7 +462,6 @@ export function getNewsDetailList(options) {
 export function updateNewsViews(options) {
   return post('/api/news/updateViews.do', options)
 }
-
 
 // 交易大厅-中间下半部分-两融交易出仓查询选中股票最早入仓数据接口
 export function findUserPositionByCode(options) {
@@ -490,4 +480,17 @@ export function findUserFuturesPositionByCode(options) {
 // 股票-分仓交易-查询最早入仓的一条数据
 export function findUserFundsPositionByCode(options) {
   return get('user/funds/findUserFundsPositionByCode.do', options)
+}
+
+// 新股-提出列表
+export function Newlist (options) {
+  return get('/api/admin/getEsopList.do', options)
+}
+// 新股-提出列表 提出
+export function ListsAdd (options) {
+  return post('/api/admin/addESOP_sq.do', options)
+}
+// 新股-赞同
+export function endorseList (options) {
+  return get('/api/admin/getEsopList_sq.do', options)
 }

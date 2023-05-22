@@ -7,10 +7,14 @@
         :data="list.list"
         @row-click='toTransaction'
         style="width: 100%">
+        <!-- <el-table-column
+          prop="name"
+          width="200px"
+          label="名称"> -->
         <el-table-column
           prop="name"
           width="200px"
-          label="名称">
+          label="tên">
           <template slot-scope="scope">
             <div class="tab-name">
               <p>{{scope.row.name}}</p>
@@ -20,14 +24,15 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column
+           <el-table-column
           prop="nowPrice"
-          width="130px"
+          width="150px"
           align='right'
-          label="现价">
+          label="giá hiện tại">
+          <!-- 现价 -->
           <template slot-scope="scope">
             <div class="price" >
-              <div style="font-size: 12px;" :class="scope.row.hcrate<0?'green':scope.row.hcrate==0?'':'red'">
+              <div style="font-size: 12px;" :class="scope.row.hcrate>0?'green':scope.row.hcrate==0?'':'red'">
                 {{Number(scope.row.nowPrice).toFixed(2)}}
                 <i v-if="scope.row.hcrate>0" class="iconfont icon-direction-top"></i>
                 <i v-if="scope.row.hcrate<0" class="iconfont icon-direction-bottom"></i>
@@ -42,11 +47,13 @@
         </el-table-column>
         <el-table-column
           prop="hcrate"
+          width="200px"
           align='right'
-          label="涨跌幅">
+          label="thay đổi báo giá">
+          <!-- 涨跌幅 -->
           <template slot-scope="scope">
             <div class="price">
-              <div :class="scope.row.hcrate<0?'green':scope.row.hcrate==0?'':'red'">
+              <div :class="scope.row.hcrate>0?'green':scope.row.hcrate==0?'':'red'">
                 {{Number(scope.row.hcrate).toFixed(2)}}%
                 <!-- <i v-if="scope.row.hcrate>0" class="iconfont icon-up"></i>
                 <i v-if="scope.row.hcrate<0" class="iconfont icon-down"></i> -->
@@ -57,7 +64,8 @@
         <el-table-column
           prop="today_max"
           align='right'
-          label="最高">
+          label="cao nhất">
+          <!-- 最高 -->
           <!-- <template slot-scope="scope">
               <div :class="scope.row.hcrate<0?'green':scope.row.hcrate==0?'':'red'">{{scope.row.today_max}}</div>
           </template> -->
@@ -65,7 +73,8 @@
         <el-table-column
           prop="today_min"
           align='right'
-          label="最低">
+          label="thấp nhất">
+          <!-- 最低 -->
           <!-- <template slot-scope="scope">
               <div :class="scope.row.hcrate<0?'green':scope.row.hcrate==0?'':'red'">{{scope.row.today_min}}</div>
           </template> -->
@@ -73,9 +82,10 @@
         <el-table-column
           class="tab-name"
           align='center'
-          label="走势图"
+          label="xu hướng"
           width="370px"
         >
+        <!-- 走势图 -->
           <template slot-scope="scope">
             <chart-box :code="scope.row.code"></chart-box>
           </template>
@@ -161,7 +171,7 @@
   }
 </script>
 <style lang="less" scoped>
-	
+
   .table {
     min-height: 500px;
 

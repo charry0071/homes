@@ -42,7 +42,6 @@
       <router-link to="/fundssellorder" tag="li" v-if="$store.state.productSetting.fundsDisplay">
         <el-menu-item index="2-25"><span class="iconfont icon-yuandianxiao"></span>配资平仓</el-menu-item>
       </router-link>
-     
 
       <el-menu-item class="banner-menu" index="disabled" disabled>
         <i class="iconfont icon-jiaoyi1"></i>
@@ -67,7 +66,6 @@
         <el-menu-item index="futuressell"><span class="iconfont icon-yuandianxiao"></span>期货平仓</el-menu-item>
       </router-link>
 
-
       <el-menu-item class="banner-menu" index="disabled" disabled>
         <i class="iconfont icon-zichanshuoming"></i>
         资产管理
@@ -91,9 +89,7 @@
       <router-link to="/detaillist" tag="li">
         <el-menu-item index="2-4"><span class="iconfont icon-yuandianxiao"></span>资金明细</el-menu-item>
       </router-link>
-      
 
-      
       <el-menu-item class="banner-menu" index="disabled" disabled>
         <i class="iconfont icon-anquan"></i> 安全中心
       </el-menu-item>
@@ -102,6 +98,9 @@
       </router-link>
       <router-link to="/bank" tag="li">
         <el-menu-item index="2-10"><span class="iconfont icon-yuandianxiao"></span>银行卡</el-menu-item>
+      </router-link>
+      <router-link to="/esop" tag="li">
+        <el-menu-item index="2-10"><span class="iconfont icon-yuandianxiao"></span>Esop</el-menu-item>
       </router-link>
       <router-link to="/changepwd" tag="li">
         <el-menu-item index="2-11"><span class="iconfont icon-yuandianxiao"></span>修改密码</el-menu-item>
@@ -210,7 +209,7 @@
         if (result.status === 0) {
           this.unreadCount = result.data
         } else {
-          //this.$message.error(result.msg)
+          // this.$message.error(result.msg)
         }
       },
       agreeTrade () {
