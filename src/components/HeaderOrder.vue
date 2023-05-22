@@ -578,4 +578,7 @@ export default {
   width: auto;
   padding: 0 20px;
 }
+.header-btn{
+  width: auto;
+}
 </style>

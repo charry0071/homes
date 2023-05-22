@@ -73,77 +73,170 @@
         </div>
         <!-- 股市 -->
         <div class="stock">
-          <div class="tit"><span class="iconfont icon-_gushiloushi"></span> 沪深股市</div>
+          <div class="tit"><span class="iconfont icon-_gushiloushi"></span>
+          <!-- 沪深股市 -->
+          Thị trường chứng khoán Thượng Hải và Thâm Quyến
+          </div>
           <div class="info">
             <div class="left">
               <div class="item">
-                <div class="i_tit">标的名称：</div>
-                <div class="msg">上海、深圳股市融资融券板块</div>
-              </div>
-              <div class="item">
-                <div class="i_tit">市场交易时间： </div>
+                <div class="i_tit">
+                  <!-- 标的名称： -->
+                  tên chủ đề：
+                </div>
                 <div class="msg">
-                  <span>第一节：{{sitesetInfo.transAmBegin}}-{{sitesetInfo.transAmEnd}}</span>
-                  <span>第二节：{{sitesetInfo.transPmBegin}}-{{sitesetInfo.transPmEnd}}</span>
-                  <p>（北京时间）(实际开放交易时间以交易规则为准）</p>
+                  <!-- 上海、深圳股市融资融券板块 -->
+                  Lĩnh vực giao dịch ký quỹ thị trường chứng khoán Thượng Hải và Thâm Quyến
                 </div>
               </div>
               <div class="item">
-                <div class="i_tit">最小交易单位： </div>
+                <div class="i_tit">
+                  <!-- 市场交易时间：  -->
+                  Giờ giao dịch thị trường:
+                </div>
+                <div class="msg">
+                  <span>
+                    <!-- 第一节： -->
+                    quý đầu tiên：
+                    {{sitesetInfo.transAmBegin}}-{{sitesetInfo.transAmEnd}}</span>
+                  <span>
+                    <!-- 第二节： -->
+                    Phần Hai:{{sitesetInfo.transPmBegin}}-{{sitesetInfo.transPmEnd}}</span>
+                  <p>
+                    <!-- （北京时间）(实际开放交易时间以交易规则为准） -->
+                    (Giờ Bắc Kinh) (Thời gian mở giao dịch thực tế tuân theo các quy tắc giao dịch)
+                    </p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="i_tit">
+                  <!-- 最小交易单位：  -->
+                  Đơn vị giao dịch tối thiểu:
+                  </div>
                 <div class="msg">{{(sitesetInfo.buyMinAmt/100).toFixed(2)}}手 ，每1手=100股</div>
               </div>
               <div class="item">
-                <div class="i_tit">最大交易单位： </div>
+                <div class="i_tit">
+                  <!-- 最大交易单位：  -->
+                  Đơn vị giao dịch tối thiểu:
+                  </div>
                 <div class="msg">{{(sitesetInfo.buyMaxNum/100).toFixed(2)}}手 ，每1手=100股</div>
               </div>
               <div class="item">
-                <div class="i_tit">交易方式： </div>
-                <div class="msg">可买多、卖空，买升、买趺、当日买入，当日平仓，賺取当日波段振幅价差！</div>
+                <div class="i_tit">
+                  <!-- 交易方式：  -->
+                  phương tiện giao dịch:
+                  </div>
+                <div class="msg">
+                  <!-- 可买多、卖空，买升、买趺、当日买入，当日平仓，賺取当日波段振幅价差！ -->
+                  Bạn có thể mua dài, bán ngắn, mua lên, mua xuống, mua trong cùng một ngày, đóng cửa trong cùng một ngày và kiếm chênh lệch giá dao động trong ngày!
+                </div>
               </div>
             </div>
             <div class="mid">
               <div class="item">
-                <div class="i_tit">交易额度： </div>
-                <div class="msg">采用融资、融券方式，买涨买跌方式买进卖出</div>
+                <div class="i_tit">
+                  <!-- 交易额度：  -->
+                  Số tiền giao dịch:
+                </div>
+                <div class="msg">
+                  <!-- 采用融资、融券方式，买涨买跌方式买进卖出 -->
+                  Sử dụng phương thức tài trợ và cho vay chứng khoán, mua lên bán xuống
+                  </div>
               </div>
               <div class="item">
-                <div class="i_tit">最小购买金额： </div>
-                <div class="msg">{{sitesetInfo.buyMinAmt}} 元</div>
+                <div class="i_tit">
+                  <!-- 最小购买金额：  -->
+                  Số tiền mua tối thiểu:
+                  </div>
+                <div class="msg">{{sitesetInfo.buyMinAmt}} VND</div>
               </div>
               <div class="item">
-                <div class="i_tit">手续费： </div>
-                <div class="msg">买入及卖出时收取，依交易总价 * {{sitesetInfo.buyFee}} 收取</div>
+                <div class="i_tit">
+                  <!-- 手续费：  -->
+                  Phí xử lý:
+                  </div>
+                <div class="msg">
+                  <!-- 买入及卖出时收取，依交易总价  -->
+                  Thu khi mua và bán, theo tổng giá giao dịch
+                  * {{sitesetInfo.buyFee}}
+                  <!-- 收取 -->
+                  sưu tầm
+                  </div>
               </div>
               <div class="item">
-                <div class="i_tit">印花税： </div>
-                <div class="msg">买入时收取，依交易总价 * {{sitesetInfo.dutyFee}} 收取</div>
+                <div class="i_tit">
+                  <!-- 印花税：  -->
+                  Tem đóng thuế:
+                </div>
+                  <div class="msg">
+                  <!-- 买入及卖出时收取，依交易总价  -->
+                  Thu khi mua, theo tổng giá giao dịch
+                  * {{sitesetInfo.dutyFee}}
+                  <!-- 收取 -->
+                  sưu tầm
+                  </div>
               </div>
               <div class="item">
-                <div class="i_tit">留仓费： </div>
-                <div class="msg">如该交易未於收盘前平仓，则该交易於收盘后记为留仓单，收取该股收盘价 * 留仓股数 * {{sitesetInfo.stayFee}} 留仓费，（节假日亦收取）</div>
+                <div class="i_tit">
+                  <!-- 留仓费：  -->
+                  Phí lưu trữ:
+                  </div>
+                <div class="msg">
+                  <!-- 如该交易未於收盘前平仓，则该交易於收盘后记为留仓单，收取该股收盘价 * 留仓股数 *  -->
+                  Nếu giao dịch không được đóng trước khi thị trường đóng cửa, giao dịch sẽ được ghi nhận dưới dạng biên lai nhập kho sau khi thị trường đóng cửa và giá đóng cửa của cổ phiếu sẽ được tính * Số lượng cổ phiếu ở vị trí dự trữ *
+                  {{sitesetInfo.stayFee}}
+                  <!-- 留仓费，（节假日亦收取） -->
+                  Phí lưu trữ, (cũng được tính vào các ngày lễ)
+                  </div>
               </div>
             </div>
             <div class="right">
               <div class="item">
-                <div class="i_tit">最大留仓天数： </div>
-                <div class="msg">{{sitesetInfo.stayMaxDays}} 天</div>
+                <div class="i_tit">
+                  <!-- 最大留仓天数： -->
+                  Số ngày lưu giữ tối đa:
+                  </div>
+                <div class="msg">{{sitesetInfo.stayMaxDays}}
+                  <!-- 天 -->
+                  bầu trời
+                  </div>
               </div>
               <div class="item">
-                <div class="i_tit">出金规则： </div>
-                <div class="msg">当前有持仓无法出金，最小出金金额为 {{sitesetInfo.withMinAmt}} 元</div>
+                <div class="i_tit">
+                  <!-- 出金规则：  -->
+                  Quy tắc rút tiền:
+
+                  </div>
+                <div class="msg">
+                  <!-- 当前有持仓无法出金，最小出金金额为  -->
+                  Hiện tại có những vị trí không thể rút tiền, số tiền rút tối thiểu là
+                  {{sitesetInfo.withMinAmt}} VBN</div>
               </div>
               <div class="item">
-                <div class="i_tit">出金时间： </div>
-                <div class="msg">出金时间为 {{sitesetInfo.withTimeBegin}} :00 和 {{sitesetInfo.withTimeEnd}} : 00 之间</div>
+                <div class="i_tit">
+                  <!-- 出金时间：  -->
+                  Thời gian rút tiền:
+                </div>
+                <div class="msg">
+                  <!-- 出金时间为  -->
+                  Thời gian rút tiền là
+                  {{sitesetInfo.withTimeBegin}} :00 Và {{sitesetInfo.withTimeEnd}} : 00 giữa</div>
               </div>
               <div class="item">
-                <div class="i_tit">时差： </div>
-                <div class="msg">夏令：0小时；冬令：0小时</div>
+                <div class="i_tit">
+                  <!-- 时差：  -->
+                  say máy bay:
+                  </div>
+                <div class="msg">
+                  <!-- 夏令：0小时；冬令：0小时 -->
+                  Mùa hè: 0 giờ; Mùa đông: 0 giờ
+                </div>
               </div>
-              <div class="item">
+              <!-- <div class="item">
                 <div class="i_tit">数据来源： </div>
                 <div class="msg">中国上海证券交易所及深训证券交易所</div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -267,5 +360,8 @@ export default {
     padding: 15px 0;
     // background: #1f2026;
   }
+}
+.black-bg .product .main .cot .stock .tit{
+  width: 750px;
 }
 </style>
