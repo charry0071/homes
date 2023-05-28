@@ -65,7 +65,7 @@
   right: 0;
   transform: translate(0, -140%);
   margin: 0 auto;
-  width: 170px;
+  width: 268px;
   height: 42px;
   background-color: #E5003D;
   border-radius: 3px;
@@ -912,7 +912,7 @@
 }
 .red-bg .down .serve {
   position: relative;
-  margin-top: 530px;
+  margin-top: 680px;
   width: 100%;
   color: #000;
   background-color: #fff;

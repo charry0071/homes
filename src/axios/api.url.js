@@ -3,7 +3,7 @@ export default {
   DOMAIN: '/apis',
   // baseURL: 'http://www.shehua56.com',
   // baseURL: 'http://localhost',
-  baseURL: '/apis',
+  baseURL: '',
 
   util: {
     image: '/util/image.html' // 图片上传

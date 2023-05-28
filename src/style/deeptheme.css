@@ -63,7 +63,7 @@
   right: 0;
   transform: translate(0, -140%);
   margin: 0 auto;
-  width: 170px;
+  width: 268px;
   height: 42px;
   background-color: #E5003D;
   border-radius: 3px;
@@ -906,7 +906,7 @@
 }
 .black-bg .down .serve {
   position: relative;
-  margin-top: 530px;
+  margin-top: 680px;
   width: 100%;
   background: linear-gradient(to right, #132F49, #235859, #1F5156, #16354B);
   height: 377px;

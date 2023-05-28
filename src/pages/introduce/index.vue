@@ -7,7 +7,10 @@
       <slot>
         <div class="bancot">
           <div class="description">
-            <div class="tit"><span class="zh">公司简介</span><span class="en">COMPANY PROFILE</span></div>
+            <div class="tit"><span class="zh">
+              <!-- 公司简介 -->
+              Hồ sơ công ty
+              </span><span class="en">COMPANY PROFILE</span></div>
           </div>
         </div>
       </slot>
@@ -62,8 +65,8 @@
         siteInfo: {}, // 站点信息
         timer: null,
         // 分隔信息
-        companyInfoOne:'',
-        companyInfoTwo:''
+        companyInfoOne: '',
+        companyInfoTwo: ''
       }
     },
     watch: {},
@@ -84,8 +87,8 @@
         if (result.status === 0) {
           this.siteInfo = result.data
           var str = this.siteInfo.companyInfo
-          this.companyInfoOne = str.substring(str.indexOf('自'),str.indexOf('嘉进投资国际有限公司'))
-          this.companyInfoTwo = str.substring(str.indexOf('嘉进投资国际有限公司'),99999)
+          this.companyInfoOne = str.substring(str.indexOf('自'), str.indexOf('嘉进投资国际有限公司'))
+          this.companyInfoTwo = str.substring(str.indexOf('嘉进投资国际有限公司'), 99999)
           console.log(this.companyInfoTwo)
         } else {
           this.$message.error(result.msg)

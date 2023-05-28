@@ -7,7 +7,7 @@
 	  <el-header>
 		  <home-header></home-header>
 	  </el-header>
-      
+
     </div>
     <div class="loginbg-box">
       <!-- <img class="login-img" src="../../assets/image/login.jpeg" alt=""> -->
@@ -18,7 +18,10 @@
         <!-- <p class="prompt animated fadeInUp">为投资者量身定做机构版投资软件</p> -->
       </div>
       <div class="form-box">
-        <h2 style="text-align:center">用户登录</h2>
+        <h2 style="text-align:center">
+          <!-- 用户登录 -->
+          Đăng nhập người dùng
+        </h2>
         <el-form
           :hide-required-asterisk="true"
           :model="form"
@@ -33,13 +36,13 @@
               type="text"
               class="user-phone"
               v-model="form.phone"
-              placeholder="请输入手机号码"
+              placeholder="Vui lòng nhập số điện thoại"
             >
               <i slot="prepend" class="iconfont icon-user1" style="font-size:13px"></i>
             </el-input>
           </el-form-item>
           <el-form-item label prop="pwd">
-            <el-input type="password"  class="user-phone" v-model="form.pwd" placeholder="请输入密码">
+            <el-input type="password"  class="user-phone" v-model="form.pwd" placeholder="xin vui lòng nhập mật khẩu">
               <i slot="prepend" class="iconfont icon-zu" style="font-size: 15px;"></i>
             </el-input>
           </el-form-item>
@@ -50,15 +53,25 @@
             type="primary"
             :loading="islogin"
             @click="checkPhone('ruleForm')"
-          >立即登录</el-button>
+          >
+          <!-- 立即登录 -->
+          đăng nhập ngay lập tức
+          </el-button>
         </div>
         <div class="text-right clearfix">
           <div class="pull-left">
-            <a @click="toForget">忘记密码？</a>
+            <a @click="toForget">
+              <!-- 忘记密码？ -->
+              quên mật khẩu?
+            </a>
           </div>
           <div class="pull-right">
-            还没有账号？
-            <a @click="toRegister">立即注册</a>
+            <!-- 还没有账号？ -->
+            Không tài khoản?
+            <a @click="toRegister">
+              Đăng ký ngay
+              <!-- 立即注册 -->
+              </a>
           </div>
         </div>
       </div>
@@ -70,9 +83,9 @@
 </template>
 
 <script>
-import * as api from "../../axios/api";
-import HomeFooter from "../../components/Footer";
-import HomeHeader from "../../components/HeaderOrder";
+import * as api from '../../axios/api'
+import HomeFooter from '../../components/Footer'
+import HomeHeader from '../../components/HeaderOrder'
 import newFooter from '@/components/newFooter'
 
 export default {
@@ -84,17 +97,17 @@ export default {
   props: {},
   data() {
     let validatePass = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请输入手机号码"));
+      if (value === '') {
+        callback(new Error('Vui lòng nhập số điện thoại'))
       } else {
         // let myreg = /^[1][3,4,5,7,8][0-9]{9}$/  //手机号码验证
-        let myreg = /^[0-9]{11}$/; // 手机号码验证
+        let myreg = /^[0-9]{11}$/ // 手机号码验证
         if (!myreg.test(value)) {
-          callback(new Error("请输入正确的手机号码"));
+          callback(new Error('Vui lòng nhập đúng số điện thoại'))
         }
-        callback();
+        callback()
       }
-    };
+    }
     // let validatePass2 = (rule, value, callback) => {
     //   if (value === '') {
     //     callback(new Error('请输入密码'))
@@ -111,48 +124,48 @@ export default {
       islogin: false,
       siteInfo: {},
       form: {
-        phone: "",
-        pwd: "",
+        phone: '',
+        pwd: ''
       },
       rule: {
         phone: [
           {
             required: true,
             validator: validatePass,
-            message: "请输入手机号码",
-            trigger: "blur",
-          },
+            message: 'Vui lòng nhập số điện thoại',
+            trigger: 'blur'
+          }
         ],
-        pwd: [{ required: true, message: "请输入密码", trigger: "blur" }],
-      },
-    };
+        pwd: [{ required: true, message: 'xin vui lòng nhập mật khẩu', trigger: 'blur' }]
+      }
+    }
   },
   watch: {},
   computed: {},
   created() {},
   mounted() {
-    this.getInfoSite();
+    this.getInfoSite()
   },
   methods: {
     async getInfoSite() {
       // 获取网站信息
-      let result = await api.getInfoSite();
+      let result = await api.getInfoSite()
       if (result.status === 0) {
-        this.siteInfo = result.data;
-        this.$store.state.siteInfo = this.siteInfo;
+        this.siteInfo = result.data
+        this.$store.state.siteInfo = this.siteInfo
       } else {
-        this.$message.error(result.msg);
+        this.$message.error(result.msg)
       }
     },
     async checkPhone(val) {
       // 先验证是否已经注册
-      let data = await api.checkPhone({ phoneNum: this.form.phone });
+      let data = await api.checkPhone({ phoneNum: this.form.phone })
       if (data.status === 0) {
         // 如果用户已存在返回 0
-        this.submit(val);
+        this.submit(val)
       } else {
-        this.$message.success("用户还未注册,请先注册");
-        this.$router.push("/register");
+        this.$message.success('Người dùng chưa đăng ký, vui lòng đăng ký trước')
+        this.$router.push('/register')
       }
     },
     submit(formName) {
@@ -161,62 +174,64 @@ export default {
         if (valid) {
           let opts = {
             phone: this.form.phone,
-            userPwd: this.form.pwd,
-          };
-          this.islogin = true;
-          let data = await api.login(opts);
+            userPwd: this.form.pwd
+          }
+          this.islogin = true
+          let data = await api.login(opts)
           if (data.status === 0) {
-            this.$store.state.userInfo.phone = this.phone;
+            this.$store.state.userInfo.phone = this.phone
             // window.localStorage.setItem('phone',this.form.phone)
             // setLocalstorage('phone',this.form.phone)
-            this.$store.state.haslogin = true;
-            this.$message.success(data.msg);
+            this.$store.state.haslogin = true
+            this.$message.success(data.msg)
             // this.$router.push('/home')
-            this.toTransform();
+            this.toTransform()
           } else {
-            this.$message.error(data.msg);
+            this.$message.error(data.msg)
           }
-          this.islogin = false;
+          this.islogin = false
         } else {
-          return false;
+          return false
         }
-      });
+      })
     },
     async toTransform() {
       let opt = {
         pageNum: 1,
-        pageSize: 1,
-      };
-      this.loading = true;
-      let data = await api.getStock(opt);
+        pageSize: 1
+      }
+      this.loading = true
+      let data = await api.getStock(opt)
       if (data.status === 0) {
         this.$router.push({
-          path: "/transaction",
+          path: '/transaction',
           query: {
-            code: data.data.list[0].code,
-          },
-        });
+            code: data.data.list[0].code
+          }
+        })
       } else {
-        this.$message.error(data.msg);
+        this.$message.error(data.msg)
       }
     },
     toRegister() {
       // 去注册
-      this.$store.state.loginIsShow = false;
-      this.$router.push("/register");
+      this.$store.state.loginIsShow = false
+      this.$router.push('/register')
     },
     toForget() {
-      this.$router.push("/forget");
-    },
-  },
-};
+      this.$router.push('/forget')
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
-.login-box .text-right[data-v-23b3be22]{
+.login-box .text-right{
       margin: 25px 0 22px;
+      width: 120%;
+    margin-left: -10% !important;
 }
-.login-box .form-box[data-v-23b3be22]{
-  
+.login-box .form-box{
+
     height: 400px;
     border-radius: 5px;
 }

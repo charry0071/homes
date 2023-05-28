@@ -81,7 +81,7 @@
           // 判断是否登录
           if (this.$store.state.userInfo.userAmt !== data.data.userInfo) {
 						console.log(data.data)
-						this.$store.commit('setUserInfo',data.data)
+						this.$store.commit('setUserInfo', data.data)
             this.refresh = true
           } else {
             this.refresh = false
@@ -101,6 +101,9 @@
   }
 </script>
 <style lang="less" scoped>
+  // .usercot{
+  //   min-height: 100vh !important;
+  // }
   .table-box {
     padding-top: 65px;
     padding-bottom: 100px;

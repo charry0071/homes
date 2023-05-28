@@ -19,7 +19,7 @@
           {
             //pageLanguage: 'zh-CN',
             //这个是你需要翻译的语言，比如你只需要翻译成越南和英语，这里就只写en,vi
-            includedLanguages: "zh-CN,en",
+            includedLanguages: "zh-CN,en,vi",
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE, //终端窗体呢
             autoDisplay: false
           },
@@ -39,7 +39,8 @@
       // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
       // ajax.open('get', 'http://localhost/api/site/getInfo.do');
       // ajax.open('get', 'http://localhost:8070/api/site/getInfo.do');
-      ajax.open("get", "http://43.224.34.138:99/api/site/getInfo.do");
+      // ajax.open("get", "http://43.224.34.138:99/api/site/getInfo.do");
+      ajax.open("get", "http://wap.xtbistock.com/apis/api/admin/getProductSetting.do");
       // 步骤三:发送请求
       ajax.send();
       // 步骤四:注册事件 onreadystatechange 状态改变就会调用

@@ -13,11 +13,22 @@ module.exports = {
     proxyTable: {
       '/apis': {
         // target: 'http://127.0.0.1:8085',
-        target: 'http://43.224.34.138:99',
+        // target: 'http://43.224.34.138:99',
+        target:'http://wap.xtbistock.com/apis',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
           '^/apis': ''
+        }
+      },
+      '/wifeed': {
+        // target: 'https://pc.zsycyy.com',
+        // target: 'http://www.shehua56.com',
+        target: 'https://wifeed.vn',
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wifeed': ''
         }
       },
 	  // '/': {
@@ -31,8 +42,8 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: '0.0.0.0', // can be overwritten by process.env.HOST
-    port: 5651, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '127.0.0.1', // can be overwritten by process.env.HOST
+    port: 8085, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

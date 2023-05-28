@@ -43,6 +43,7 @@ import Contract from '../pages/funds/components/contract' // 合同
 
 import Enterprise from '../pages/enterprise/index' // 企业公告
 import enterpriseDetails from '../pages/enterprise/enterprise-details' // 企业公告详情
+import corporateNewsDetails from '../pages/enterprise/enterprise-details/corporateNew-details' // 企业新闻详情
 
 // import HoldPositions from '@/pages/holdPositions/index'
 // import CapitalDetail from '@/pages/capitalDetail/index'
@@ -269,8 +270,21 @@ export default new Router({
     {
       path: '/enterprise-details',
       name: 'enterprise-details',
-      meta: { title: '企业公告详情' },
+      meta: { title:
+        //  '企业公告详情'
+        'Chi tiết thông báo công ty'
+         },
       component: enterpriseDetails
+    },
+    {
+      path: '/corporateNew-details',
+      name: 'corporateNew-details',
+      meta: {
+        title:
+        // '企业新闻详情',
+        'Chi tiết tin tức công ty'
+      },
+      component: corporateNewsDetails
     }
 
   ]

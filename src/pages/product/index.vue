@@ -30,7 +30,10 @@
             <div slot="left">
               <div class="s_left">
                 <div class="not_l"
-                     style="width: 35px;overflow: hidden;"><span class="iconfont icon-kaihuhedui"></span>开户须知</div>
+                     style="width: 35px;overflow: hidden;"><span class="iconfont icon-kaihuhedui"></span>
+                     <!-- 开户须知 -->
+                     Để ý
+                     </div>
                 <div class="not_r">
                   <ul>
                     <!-- <li>开设真实账户（注册会员）之前一定要认真阅读和查看本公司的《交易规则》和《风险揭示与告知》。</li>
@@ -50,7 +53,10 @@
             <div slot="right">
               <div class="s_right">
                 <div class="not_l"
-                     style="width: 35px;overflow: hidden;"><span class="iconfont icon-kaihuhedui"></span>操盘须知</div>
+                     style="width: 35px;overflow: hidden;"><span class="iconfont icon-kaihuhedui"></span>
+                     <!-- 操盘须知 -->
+                     Để ý
+                     </div>
                 <div class="not_r">
                   <ul>
                     <!-- <li>您投资的 本金 最低 1 元;</li>
@@ -62,7 +68,7 @@
                      <li>Số tiền gốc đầu tư tối thiểu của bạn là 1 nhân dân tệ;</li>
                      <li>Sau khi xin tiền, mua và bán bất cứ lúc nào;</li>
                      <li>Sau khi khớp tài khoản, bạn có thể giao dịch ngay trong ngày;</li>
-                     <li>Khi tiền gần đến mức cảnh báo thua lỗ và buộc phải thanh lý, ký quỹ cần được bổ sung càng sớm càng tốt; nếu vị thế không được bổ sung kịp thời, nó có thể bị hệ thống kiểm soát rủi ro buộc phải thanh lý;< /li>
+                     <li>Khi tiền gần đến mức cảnh báo thua lỗ và buộc phải thanh lý, ký quỹ cần được bổ sung càng sớm càng tốt; nếu vị thế không được bổ sung kịp thời, nó có thể bị hệ thống kiểm soát rủi ro buộc phải thanh lý;</li>
                      <li>Khi vốn giao dịch thấp hơn mức thanh lý, chúng tôi có quyền thực hiện thao tác dừng lỗ trên tài khoản của bạn;</li>
                      <li>Một vị thế cổ phiếu không được vượt quá 90,00% tổng số tiền trong tài khoản;</li>
                   </ul>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div id="google_translate_element"
+    <!-- <div id="google_translate_element"
          :style="$store.state.haslogin?'top: 18px;right: 273px;':'top: 18px;right: 184px;'"
-         style="position:absolute;z-index:2000;"></div>
+         style="position:absolute;z-index:2000;"></div> -->
     <router-view />
     <login></login>
   </div>

@@ -15,46 +15,49 @@
         <p class="prompt animated fadeInUp">为投资者量身定做机构版投资软件</p> -->
       </div>
       <div class="form-box">
-        <h2 style="text-align: center;">注册</h2>
+        <h2 style="text-align: center;">
+          <!-- 注册 -->
+          đăng ký
+          </h2>
         <el-form :hide-required-asterisk='true' :model="form" ref="ruleForm" :rules="rule" class="demo-form-inline">
           <el-form-item label="" prop="phone">
-            <el-input maxlength='11' class="user-phone" max="11" type='text' v-model="form.phone" placeholder="请输入手机号码">
+            <el-input maxlength='11' class="user-phone" max="11" type='text' v-model="form.phone" placeholder="Vui lòng nhập số điện thoại">
               <i slot="prepend" class="iconfont icon-shouji1" style="font-size:14px"></i>
             </el-input>
           </el-form-item>
           <el-form-item label=""  prop="code" v-if="$store.state.siteInfo.smsDisplay">
-            <el-input type='text' class="user-phone" v-model="form.code" placeholder="验证码">
-              <el-button v-if="codeshow" @click="getCode" slot="append">点击获取验证码</el-button>
+            <el-input type='text' class="user-phone" v-model="form.code" placeholder="mã xác nhận">
+              <el-button v-if="codeshow" @click="getCode" slot="append">Bấm lấy mã xác thực</el-button>
               <el-button v-if="!codeshow" slot="append">{{count}}S</el-button>
               <i slot="prepend" class="iconfont icon-tongguo5" ></i>
             </el-input>
           </el-form-item>
           <el-form-item label="" prop="pwd">
-            <el-input type='password' class="user-phone" v-model="form.pwd" placeholder="密码为6~12位数字、字母或符号">
+            <el-input type='password' class="user-phone" v-model="form.pwd" placeholder="Mật khẩu là 6 ~ 12 chữ số, chữ cái hoặc ký hiệu">
               <i slot="prepend" class="iconfont icon-zu" style="font-size: 15px;"></i>
             </el-input>
           </el-form-item>
           <el-form-item label="" prop="pwd2">
-            <el-input type='password' class="user-phone" v-model="form.pwd2" placeholder="请再次确认密码">
+            <el-input type='password' class="user-phone" v-model="form.pwd2" placeholder="Vui lòng xác nhận lại mật khẩu">
               <i slot="prepend" class="iconfont icon-zu" style="font-size: 15px;"></i>
             </el-input>
           </el-form-item>
           <el-form-item label="" prop="invitecode">
-            <el-input type='text' class="user-phone" v-model="form.invitecode" placeholder="机构代码">
+            <el-input type='text' class="user-phone" v-model="form.invitecode" placeholder="Mã cơ quan">
               <i slot="prepend" class="iconfont icon-tuijian"></i>
             </el-input>
           </el-form-item>
         </el-form>
         <el-row class="buy-item text-left agree-box">
           <el-checkbox class="check-box" v-model="agree" name="type"></el-checkbox>
-          我已阅读并同意<a @click="agreeDialogVisible = true" href="javascript:;">《注册协议》</a>和<a
+          tôi đã đọc và đồng ý<a @click="agreeDialogVisible = true" href="javascript:;">Hợp đồng đăng ký</a>Và<a
           @click="tradeDialogVisible = true" href="javascript:;">《{{siteInfo.tradeAgreeTitle}}》</a>
         </el-row>
         <div slot="footer" class="dialog-footer">
-          <el-button class="box-btn" type="primary" :loading="islogin" @click="submit('ruleForm')">注 册</el-button>
+          <el-button class="box-btn" type="primary" :loading="islogin" @click="submit('ruleForm')">đăng ký</el-button>
         </div>
-        <div class="text-left" style="text-align: right;">
-          已有账号？<a @click="toLogin">返回登录</a>
+        <div class="text-left des" style="text-align: right;">
+          Bạn co săn san để tạo một tai khoản?<a @click="toLogin">đăng nhập lại</a>
         </div>
       </div>
     </div>
@@ -138,35 +141,35 @@ import newFooter from '@/components/newFooter'
     data () {
       let validatePass = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请输入手机号码'))
+          callback(new Error('Vui lòng nhập số điện thoại'))
         } else {
           // let myreg = /^[1][3,4,5,7,8][0-9]{9}$/  //手机号码验证
           let myreg = /^[0-9]{11}$/ // 手机号码验证
           if (!myreg.test(value)) {
-            callback(new Error('请输入正确的手机号码'))
+            callback(new Error('Vui lòng nhập đúng số điện thoại'))
           }
           callback()
         }
       }
       let validatePass2 = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请输入密码'))
+          callback(new Error('xin vui lòng nhập mật khẩu'))
         } else {
           // let val = value.replace(/\s*/g, '')
           let valuereg = value.replace(/\s*/g, '')
           let myreg = /^[a-zA-Z0-9!@#$%^&*.]{6,12}$/ // 密码
           if (!myreg.test(valuereg)) {
-            callback(new Error('请输入正确的密码'))
+            callback(new Error('Vui lòng nhập đúng mật khẩu'))
           }
           callback()
         }
       }
       let validatePass3 = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请确认密码'))
+          callback(new Error('Vui lòng xác nhận mật khẩu của bạn'))
         } else {
           if (value !== this.form.pwd) {
-            callback(new Error('两次输入的密码不一致'))
+            callback(new Error('Hai mật khẩu đã nhập không khớp'))
           }
           callback()
         }
@@ -190,20 +193,20 @@ import newFooter from '@/components/newFooter'
         },
         rule: {
           phone: [
-            { required: true, validator: validatePass, message: '请输入手机号码', trigger: 'blur' }
+            { required: true, validator: validatePass, message: 'Vui lòng nhập số điện thoại', trigger: 'blur' }
           ],
           pwd: [
-            { required: true, validator: validatePass2, message: '请输入密码', trigger: 'blur' }
+            { required: true, validator: validatePass2, message: 'xin vui lòng nhập mật khẩu', trigger: 'blur' }
             // { min: 6,max:12, message: '密码最少为6到12位数', trigger: 'blur' },
           ],
           code: [
-            { required: true, message: '请输入验证码', trigger: 'blur' }
+            { required: true, message: 'vui lòng nhập mã xác nhận', trigger: 'blur' }
           ],
           pwd2: [
-            { required: true, validator: validatePass3, message: '请确认密码', trigger: 'blur' }
+            { required: true, validator: validatePass3, message: 'Vui lòng xác nhận mật khẩu của bạn', trigger: 'blur' }
           ],
           invitecode: [
-            { required: true, message: '请输入机构代码', trigger: 'blur' }
+            { required: true, message: 'Vui lòng nhập mã tổ chức', trigger: 'blur' }
           ]
         },
         adminUrl: '',
@@ -239,7 +242,7 @@ import newFooter from '@/components/newFooter'
         let result = await api.getInfoSite()
         if (result.status === 0) {
           this.siteInfo = result.data
-          if(this.siteInfo.smsDisplay === false){
+          if (this.siteInfo.smsDisplay === false) {
               this.form.code = '6666'
           }
           this.regAgreeText = this.siteInfo.regAgreeText
@@ -255,7 +258,7 @@ import newFooter from '@/components/newFooter'
         this.$refs[formName].validate(async (valid) => {
           if (valid) {
             if (!this.agree) {
-              this.$message.error('请先同意注册协议')
+              this.$message.error('Vui lòng đồng ý với thỏa thuận đăng ký trước')
             }
             let opts = {
               // agentCode:'4023', // SR330001
@@ -267,7 +270,7 @@ import newFooter from '@/components/newFooter'
             this.islogin = true
             let data = await api.register(opts)
             if (data.status === 0) {
-              this.$message.success('注册成功，请登录')
+              this.$message.success('Đăng ký thành công, vui lòng đăng nhập')
               this.$router.push('/login')
             } else {
               this.$message.error(data.msg)
@@ -280,12 +283,12 @@ import newFooter from '@/components/newFooter'
       },
       getCode () {
         if (!this.form.phone) {
-          this.$message.error('请输入电话号码')
+          this.$message.error('Xin vui lòng điền số điện thoại của bạn')
         } else {
           // let myreg = /^[1][3,4,5,7,8][0-9]{9}$/  //手机号码验证
           let myreg = /^[0-9]{11}$/ // 手机号码验证
           if (!myreg.test(this.form.phone)) {
-            this.$message.error('请输入正确的电话号码')
+            this.$message.error('Vui lòng nhập đúng số điện thoại')
           } else {
             this.checkPhone()
           }
@@ -296,7 +299,7 @@ import newFooter from '@/components/newFooter'
         let data = await api.checkPhone({ phoneNum: this.form.phone })
         if (data.status === 0) {
           // 如果用户已存在返回 0
-          this.$message.error('已注册,请登录')
+          this.$message.error('Đã đăng ký, vui lòng đăng nhập')
           this.$router.push('/login')
         } else {
           this.adminUrl = process.env.API_HOST
@@ -309,7 +312,7 @@ import newFooter from '@/components/newFooter'
       },
       async checkImg () {
         if (!this.form.code2) {
-          this.$message.error('您输入的验证码有误,请重新输入')
+          this.$message.error('Mã xác minh bạn đã nhập sai, vui lòng nhập lại')
           return
         }
         // await this.checkCode()
@@ -319,7 +322,7 @@ import newFooter from '@/components/newFooter'
           this.dialogVisible = false
         } else {
           this.refreshImg()
-          this.$message.error('您输入的验证码有误,请重新输入')
+          this.$message.error('Mã xác minh bạn đã nhập sai, vui lòng nhập lại')
         }
       },
       async getcode () {
@@ -366,17 +369,17 @@ import newFooter from '@/components/newFooter'
 /deep/ .user-phone input {
   border: none;
   margin-left: 10px;
-  
+
 }
 /deep/ .login-box .el-input-group__prepend {
   left: 12px;
 }
 .login-box .text-right[data-v-23b3be22]{
       margin: 25px 0 22px;
-      
+
 }
 .login-box .form-box[data-v-23b3be22]{
-  
+
     height: 400px;
     border-radius: 5px;
 }
@@ -393,7 +396,7 @@ import newFooter from '@/components/newFooter'
 }
 .red-bg {
   .user-phone {
-    
+
     border: 1px solid rgb(150, 150, 150);
     border-radius: 50px;
   }
@@ -452,6 +455,9 @@ import newFooter from '@/components/newFooter'
 
   .login-box .text-left {
     padding: 10px 0;
+    width: 120%;
+    margin-left: -10% !important;
+    text-align: center !important;
   }
 
   .er-code-dialog {

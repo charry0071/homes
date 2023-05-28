@@ -70,7 +70,7 @@
           </el-menu>
         </div>
         <div class="user pull-right main-col"
-             style="width: 100%; display: flex;justify-content: flex-end;padding:14px;font-size: 16px;overflow: hidden;">
+             style="width: 100%; display: flex;justify-content: flex-end;padding:0;font-size: 16px;overflow: hidden;">
           <!-- <a href="#"
              size="mini"
              class="stock-show"
@@ -80,9 +80,9 @@
               在线客服
             </span>
           </a> -->
-          <a href="javascript:;"
+          <!-- <a href="javascript:;"
              id="google_translate_element"
-             style="width: 40px;height: 40px;"></a>
+             style="width: 40px;height: 40px;"></a> -->
           <!-- <a href="javascript:;" class="language" type="primary" @click="isEn1">En</a> -->
           <a href="javascript:;"
              v-if="!this.$store.state.haslogin"
