@@ -293,4 +293,12 @@ export default {
 .detail-cont {
   padding-bottom: 10px;
 }
+/deep/ table{
+  display: block;
+  max-width: 100% !important;
+}
+/deep/ img {
+  max-width: 100% !important;
+  object-fit: contain;
+}
 </style>

@@ -370,4 +370,8 @@ export default {
 .black-bg .product .main .cot .stock .tit{
   width: 750px;
 }
+
+.s_left,.s_right{
+  height: 500px !important;
+}
 </style>
